@@ -1,0 +1,20 @@
+.alert {
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+h4 {
+    padding: 10px;
+}
+.selectRadio {
+    margin-left: 3px;
+}
+.credit {
+    margin-left: 1px;
+}
+.note {
+    font-size: 12px;
+    color: darkgrey;
+    margin-bottom: 20px;
+}
