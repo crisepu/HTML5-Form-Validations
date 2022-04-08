@@ -17,11 +17,27 @@
 <body>
     <div class="container-fluid">
         <form class="row border border-2 rounded m-3 " id="loginForm">
-            <div class="col-12 bg-light border-bottom border-2 p-3">
+            <div class="col-md-12 bg-light border-bottom border-2 p-3">
                 <h1>Payment for example</h1>
             </div>
-            <div class="alert alert-danger g-1 p-1" role="alert" id="bigAlert" style="display: none;">
+            <div class="col-md-12 alert alert-danger p-1" id="bigAlert" style="display: none">
                 <h4>Some fields are missing</h4>
+                <li id="cardAlert" style="display: none">Card does not have the correct format, it must start with 51
+                    and have a total of 16 digits.</li>
+                <li id="cvcAlert" style="display: none">CVC does not have the correct format, it must be between 3 to 4
+                    digits.</li>
+                <li id="amountAlert" style="display: none">Amount does not have the correct format, it must be between 1
+                    to 7 digits.</li>
+                <li id="firstNameAlert" style="display: none">First name does not have the correct format, it must start
+                    with a capital letter and contain only letters.</li>
+                <li id="lastNameAlert" style="display: none">Last name does not have the correct format,it must start
+                    with a capital letter and contain only letters.</li>
+                <li id="cityAlert" style="display: none">City does not have the correct format, it must start with a
+                    capital letter and contain only letters.</li>
+                <li id="stateAlert" style="display: none">You must choose a state.</li>
+                <li id="postalCodeAlert" style="display: none">Postal code does not have the correct format, it must be
+                    between 5 to 7 digits</li>
+                <li id="messageAlert" style="display: none">The message must not be empty.</li>
             </div>
             <div class="col-md-4">
                 <label class="form-label p-1">Card #</label>
@@ -32,7 +48,7 @@
                 <input class="form-control" id="inputCVC" placeholder="0000">
             </div>
             <div class="col-md-4">
-                <label class="form-label p-1">Amount</label>
+                <label class="form-label p-1">Amount $</label>
                 <input class="form-control" id="inputAmount" placeholder="Amount">
             </div>
             <div class="col-6">
@@ -41,7 +57,7 @@
             </div>
             <div class="col-6">
                 <label class="form-label"><br>Last Name</label>
-                <input class="form-control" id="inputLastName" >
+                <input class="form-control" id="inputLastName">
             </div>
             <div class="col-md-6">
                 <label class="form-label"><br>City</label>
@@ -50,7 +66,7 @@
             <div class="col-md-3">
                 <label class="form-label"><br>State</label>
                 <select id="inputState" class="form-select">
-                    <option selected>Pick a State</option>
+                    <option selected value="">Pick a State</option>
                     <option>Bio-Bio</option>
                     <option>Ñuble</option>
                     <option>Metropolitana</option>
@@ -86,7 +102,7 @@
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <button class="btn btn-secondary me-md-2" type="reset">Cancel</button>
                     <button class="btn btn-primary" type="submit">Send</button>
-                  </div>
+                </div>
             </div>
         </form>
     </div>
