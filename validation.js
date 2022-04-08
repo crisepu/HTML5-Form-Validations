@@ -13,14 +13,64 @@ loginForm.addEventListener('submit', (e) => {
     let inputState = document.querySelector("#inputState");
     let inputPostalCode = document.querySelector("#inputPostalCode");
     let inputMessage = document.querySelector("#inputMessage");
+    let principalAlert = document.querySelector("#bigAlert");
     
     let patternCard = /5[1-5][0-9]{14}$/; // expresion regular mastercard
     let patternCVC = /^[0-9]{3,4}$/;
     let patternAmount = /^[0-9]{1,7}$/;
     let patternNameCity = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/; //para first name, last name y city
     let patternPostalCode = /^[0-9]{5,7}$/;
+    let patternMessage = /^[a-zA-Z0-9]{10,1000}$/;
 
+    function activePrincipalAlert() {
+        principalAlert.style.display = "";
+    }
 
+    if (!patternCard.test(inputCard.value)) {
+        inputCard.classList.add("alert-danger");
+        activePrincipalAlert();
+        flag = false;
+    }
+    if (!patternCVC.test(inputCVC.value)) {
+        inputCVC.classList.add("alert-danger");
+        activePrincipalAlert();
+        flag = false;
+    }
+    if (!patternAmount.test(inputAmount.value)) {
+        inputAmount.classList.add("alert-danger");
+        activePrincipalAlert();
+        flag = false;
+    }
+    if (!patternNameCity.test(inputFirstName.value)) {
+        inputFirstName.classList.add("alert-danger");
+        activePrincipalAlert();
+        flag = false;
+    }
+    if (!patternNameCity.test(inputLastName.value)) {
+        inputLastName.classList.add("alert-danger");
+        activePrincipalAlert();
+        flag = false;
+    }
+    if (!patternNameCity.test(inputCity.value)) {
+        inputCity.classList.add("alert-danger");
+        activePrincipalAlert();
+        flag = false;
+    }
+    if (!patternPostalCode.test(inputPostalCode.value)) {
+        inputPostalCode.classList.add("alert-danger");
+        activePrincipalAlert();
+        flag = false;
+    }
+    if (!patternMessage.test(inputMessage.value)) {
+        inputMessage.classList.add("alert-danger");
+        activePrincipalAlert();
+        flag = false;
+    }
+    if (inputState == "Pick a State") {
+        inputState.classList.add("alert-danger");
+        activePrincipalAlert();
+        flag = false;
+    }
     //console.log(inputCreditCard.value);
     //Validacion Card
     
@@ -31,6 +81,10 @@ loginForm.addEventListener('submit', (e) => {
         e.target.submit();
     }
 
+});
+
+loginForm.addEventListener('reset', (e) => {
+   window.location.reload();
 });
 
 /*
