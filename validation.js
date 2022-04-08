@@ -14,7 +14,12 @@ loginForm.addEventListener('submit', (e) => {
     let inputPostalCode = document.querySelector("#inputPostalCode");
     let inputMessage = document.querySelector("#inputMessage");
     
-    let patternCard =/^[a-zA-Z0-9]+$/ // revisar
+    let patternCard = /5[1-5][0-9]{14}$/; // expresion regular mastercard
+    let patternCVC = /^[0-9]{3,4}$/;
+    let patternAmount = /^[0-9]{1,7}$/;
+    let patternNameCity = /^([A-ZÁÉÍÓÚ]{1}[a-zñáéíóú]+[\s]*)+$/; //para first name, last name y city
+    let patternPostalCode = /^[0-9]{5,7}$/;
+
 
     //console.log(inputCreditCard.value);
     //Validacion Card
